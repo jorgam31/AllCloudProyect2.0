@@ -25,6 +25,7 @@ namespace myWebApp
             services.AddRazorPages();
            
             services.AddAuthentication();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,7 +33,7 @@ namespace myWebApp
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();//comentario
             }
             else
             {
