@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login";
+	ViewData["ERR_AUTH_MSG"] = "Debes iniciar Sesión";
+	ViewData["LOGOUT_AUTH_MSG"] ="No has iniciado sesion";
+ 	 
+}
+
+<section class="container"> 
+        <div class="alert alert-danger alert-dissmissible text-center" role="alert">
+            <div class="d-inline-block ">
+                @ViewData["ERR_AUTH_MSG"] 
+            </div>
+           
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+       
+    </section>
+	
+	
+	<div class="container">
+	
+	<form  class="text-center d-flex border border-primary bg-light flex-column " name="loginForm" method="POST" action="checklogin">
+		
+	 
+			<h4 class="text-center p-5 border-bottom bg-primary text-white">Inicio Sesión</h4>
+			<div class="col">
+				
+			</div>
+			<div class="d-flex flex-column">
+				<label class="col-form-label">Usuario:</label>
+				<div class="col-sm-6 d-flex mx-auto">
+					<input type="text" class="form-control text-center"  name="name" placeholder="Introduce el nombre de usuario"/>
+				</div>
+				<label class="col-form-label">Contraseña:</label>
+				<div class="col-sm-6 d-flex mx-auto">
+					<input type="password" class="form-control text-center"  name="name" placeholder="Introduce tu contraseña"/>
+				</div>
+			</div>
+			
+				 
+		<div class="d-flex justify-content-center p-4">
+			<a class="mx-auto justify-content" href="#">Olvidé mi contraseña</a>
+				<button class="btn btn btn-outline-dark mx-auto">Iniciar Sesión</button>
+		</div>
+		<div class="d-flex justify-content-center p-4">
+			<div class="d-flex">
+			<p class="mr-4">¿No tienes Cuenta?</p><a href="#">Registrarse</a>
+
+			</div>
+		</div>
+
+	</form>
+	 <div class="alert alert-info alert-dissmissible text-center m-3" role="alert">
+            <div class="d-inline-block ">
+				@ViewData["LOGOUT_AUTH_MSG"] 
+            </div>
+           
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+	</div>
+	
